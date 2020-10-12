@@ -2,55 +2,58 @@
 
 namespace PlayerStatistics;
 
+use Dictionaries\StatisticsDictionary;
+
 interface ChicagoBulls
 {
     const TEAM_NAME = 'Chicago Bulls';
 
     const MICHAEL_JORDAN = [
-        'name' => 'Michael Jordan',
-        'POS' => 2,
-        '3PA' => 1.5,
-        '3P%' => 0.238,
-        '2PA' => 21.5,
-        '2P%' => 0.482,
-        'ORB' => 1.6,
-        'DRB' => 4.2,
-        'AST' => 3.5,
-        'STL' => 1.7,
-        'BLK' => 0.5,
-        'TOV' => 2.3,
-        'PTS' => 28.7,
+        StatisticsDictionary::NAME => 'Michael Jordan',
+        StatisticsDictionary::POSITION_IN_TEAM => 2,
+        StatisticsDictionary::THREE_POINT_ATTEMPTS => 1.5,
+        StatisticsDictionary::THREE_POINT_EFFICIENCY => 0.238,
+        StatisticsDictionary::TWO_POINT_ATTEMPTS => 21.5,
+        StatisticsDictionary::TWO_POINT_EFFICIENCY => 0.482,
+        StatisticsDictionary::OFFENSIVE_REBOUNDS => 1.6,
+        StatisticsDictionary::DEFENSIVE_REBOUNDS => 4.2,
+        StatisticsDictionary::ASSISTS => 3.5,
+        StatisticsDictionary::STEALS => 1.7,
+        StatisticsDictionary::BLOCKS => 0.5,
+        StatisticsDictionary::TURNOVERS => 2.3,
+        StatisticsDictionary::POINTS => 28.7,
     ];
 
     const SCOTTIE_PIPPEN = [
-        'name' => 'Scottie Pippen',
-        'POS' => 1,
-        '3PA' => 4.4,
-        '3P%' => 0.318,
-        '2PA' => 11.6,
-        '2P%' => 0.496,
-        'ORB' => 1.2,
-        'DRB' => 4.0,
-        'AST' => 5.8,
-        'STL' => 1.8,
-        'BLK' => 1.0,
-        'TOV' => 2.5,
-        'PTS' => 19.1,
+        StatisticsDictionary::NAME => 'Scottie Pippen',
+        StatisticsDictionary::POSITION_IN_TEAM => 1,
+        StatisticsDictionary::THREE_POINT_ATTEMPTS => 4.4,
+        StatisticsDictionary::THREE_POINT_EFFICIENCY => 0.318,
+        StatisticsDictionary::TWO_POINT_ATTEMPTS => 11.6,
+        StatisticsDictionary::TWO_POINT_EFFICIENCY => 0.496,
+        StatisticsDictionary::OFFENSIVE_REBOUNDS => 1.2,
+        StatisticsDictionary::DEFENSIVE_REBOUNDS => 4.0,
+        StatisticsDictionary::ASSISTS => 5.8,
+        StatisticsDictionary::STEALS => 1.8,
+        StatisticsDictionary::BLOCKS => 1.0,
+        StatisticsDictionary::TURNOVERS => 2.5,
+        StatisticsDictionary::POINTS => 19.1,
+
     ];
 
     const DENNIS_RODMAN = [
-        'name' => 'Dennis Rodman',
-        'POS' => 3,
-        '3PA' => 0.3,
-        '3P%' => 174,
-        '2PA' => 4.2,
-        '2P%' => 448,
-        'ORB' => 5.3,
-        'DRB' => 9.8,
-        'AST' => 2.9,
-        'STL' => 0.6,
-        'BLK' => 0.2,
-        'TOV' => 1.8,
-        'PTS' => 4.7,
+        StatisticsDictionary::NAME => 'Dennis Rodman',
+        StatisticsDictionary::POSITION_IN_TEAM => 3,
+        StatisticsDictionary::THREE_POINT_ATTEMPTS => 0.3,
+        StatisticsDictionary::THREE_POINT_EFFICIENCY => 174,
+        StatisticsDictionary::TWO_POINT_ATTEMPTS => 4.2,
+        StatisticsDictionary::TWO_POINT_EFFICIENCY => 448,
+        StatisticsDictionary::OFFENSIVE_REBOUNDS => 5.3,
+        StatisticsDictionary::DEFENSIVE_REBOUNDS => 9.8,
+        StatisticsDictionary::ASSISTS => 2.9,
+        StatisticsDictionary::STEALS => 0.6,
+        StatisticsDictionary::BLOCKS => 0.2,
+        StatisticsDictionary::TURNOVERS => 1.8,
+        StatisticsDictionary::POINTS => 4.7,
     ];
 }

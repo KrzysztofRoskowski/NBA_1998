@@ -2,7 +2,7 @@
 
 namespace PlayerStatistics;
 
-use Dictionary\StatisticsDictionary;
+use Dictionaries\StatisticsDictionary;
 
 interface UtahJazz
 {

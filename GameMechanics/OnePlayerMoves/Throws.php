@@ -2,19 +2,21 @@
 
 namespace GameMechanics\OnePlayerMoves;
 
+use Dictionaries\StatisticsDictionary;
+
 class Throws
 {
-    const TWO_POINT_SHOT = "Rzut za 2";
-    const THREE_POINT_SHOT = "Rzut za 3";
+    const TWO_POINT_SHOT = "rzut za 2";
+    const THREE_POINT_SHOT = "rzut za 3";
 
     /**
      * @param $player
      * @return string
      */
-    public function decidePointAttempt($player)
+    public function playerDecidesHowToShoot($player)
     {
-        $twoPointDecision = $player['2PA'] + rand(1, 20);
-        $threePointDecision = $player['3PA'] + rand(1, 20);
+        $twoPointDecision = $player[StatisticsDictionary::TWO_POINT_ATTEMPTS] + rand(1, 20);
+        $threePointDecision = $player[StatisticsDictionary::THREE_POINT_ATTEMPTS] + rand(1, 20);
 
         if ($twoPointDecision > $threePointDecision) {
             $throwDecision = self::TWO_POINT_SHOT;
@@ -34,29 +36,31 @@ class Throws
     {
         switch ($throwDecision) {
             case self::TWO_POINT_SHOT:
-                if (($player['2P%']) <= rand(0, 1)) {
+                if (($player[StatisticsDictionary::TWO_POINT_EFFICIENCY]) <= rand(0, 1)) {
                     $throwResult = 2;
 
-                    echo $player['name'] . " trafia za " . $throwResult . " punkty";
+                    echo $player[StatisticsDictionary::NAME] . " trafia za " . $throwResult . " punkty";
                 } else {
                     $throwResult = 0;
 
-                    echo $player['name'] . " pudłuje!";
+                    echo $player[StatisticsDictionary::NAME] . " pudłuje!";
                 }
                 break;
             case self::THREE_POINT_SHOT:
-                if (($player['3P%']) <= rand(0, 1)) {
+                if (($player[StatisticsDictionary::THREE_POINT_EFFICIENCY]) <= rand(0, 1)) {
                     $throwResult = 3;
 
-                    echo $player['name'] . " trafia za " . $throwResult . " punkty";
+                    echo $player[StatisticsDictionary::NAME] . " trafia za " . $throwResult . " punkty";
                 } else {
                     $throwResult = 0;
 
-                    echo $player['name'] . " pudłuje!";
+                    echo $player[StatisticsDictionary::NAME] . " pudłuje!";
                 }
                 break;
             default:
-                $throwResult = 'Coś poszło nie tak i teraz widownia wybiega na parkiet!';
+                $throwResult = 0;
+
+                echo $player[StatisticsDictionary::NAME] . " przekracza czas na rzut...";
         }
 
         return $throwResult;
@@ -69,9 +73,9 @@ class Throws
     {
         $throws = new Throws();
 
-        $throwDecision = $throws->decidePointAttempt($player);
+        $throwDecision = $throws->playerDecidesHowToShoot($player);
 
-        echo "<a>" . $player['name'] . " wykonuje " . $throwDecision . "</a>";
+        echo "<a>" . $player[StatisticsDictionary::NAME] . " wykonuje " . $throwDecision . "</a>";
         echo "<br/><br/>";
         $throws->throwTheBall($player, $throwDecision);
         echo "<br/><br/>";

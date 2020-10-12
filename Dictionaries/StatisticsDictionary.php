@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Dictionary;
+namespace Dictionaries;
 
 interface StatisticsDictionary
 {
     /*
-     * Imię i nazwisko postaci
+     * Imię i nazwisko gracza
      */
     const NAME = 'name';
     /*
