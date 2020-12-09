@@ -56,4 +56,6 @@ interface ChicagoBulls
         StatisticsDictionary::TURNOVERS => 1.8,
         StatisticsDictionary::POINTS => 4.7,
     ];
+
+    const TEST = ['test' => 'test'];
 }
